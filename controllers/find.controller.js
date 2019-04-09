@@ -36,7 +36,7 @@ exports.getIsFlying = (req, res, next) => {
 
 exports.getIsAquatic = (req, res, next) => {
 	mountModel.find({
-		isquatic: true
+		isAquatic: true
 	},null, {sort: {name: 1}})
 	.then(items => {
 		res.status(200).send(items);
