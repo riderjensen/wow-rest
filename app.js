@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({
 	extended: false,
 	useNewUrlParser: true
 }));
+app.use(bodyParser.json());
 
 app.use('/edit', editRoute);
 

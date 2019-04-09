@@ -4,9 +4,9 @@ const mountModel = require('../models/mount.model');
 exports.editOne = (req, res, next) => {
 	const theId = req.params.id;
 	const body = req.body;
+	console.log(req.body)
 	//get all the edit information
-
-	if (body == null) {
+	if (req.body.name === undefined) {
 		return res.status(500).send({
 			message: 'Please check your data and make sure you are sending a body'
 		});
@@ -44,8 +44,6 @@ exports.deleteOne = (req, res, next) => {
 
 exports.createOne = (req, res, next) => {
 	const body = req.body;
-
-
 	const myNewItem = new mountModel({
 		name: body.name,
 		spellId: body.spellId,
