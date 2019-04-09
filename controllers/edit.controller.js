@@ -3,16 +3,25 @@ const mountModel = require('../models/mount.model');
 
 exports.editOne = (req, res, next) => {
 	const theId = req.params.id;
-
+	const body = req.body;
 	//get all the edit information
 
-	if (newTitle == null || newPrice == null) {
+	if (body == null) {
 		return res.status(500).send({
-			message: 'Please check your data and make sure you are sending title and price in the body'
+			message: 'Please check your data and make sure you are sending a body'
 		});
 	}
 	mountModel.findByIdAndUpdate(theId, {
-		// put the edit information here
+		name: body.name,
+		spellId: body.spellId,
+		creatureId: body.creatureId,
+		itemId: body.itemId,
+		qualityId: body.qualityId,
+		icon: body.icon,
+		isGround: body.isGround,
+		isFlying: body.isFlying,
+		isAquatic: body.isAquatic,
+		isJumping: body.isJumping 
 	}).then(item => {
 		res.status(201).send(item);
 	})
