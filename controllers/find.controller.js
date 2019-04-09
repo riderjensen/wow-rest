@@ -13,7 +13,7 @@ exports.getOne = (req, res, next) => {
 exports.getIsGround = (req, res, next) => {
 	mountModel.find({
 		isGround: true
-	})
+	},null, {sort: {name: 1}})
 	.then(items => {
 		res.status(200).send(items);
 	})
@@ -25,7 +25,7 @@ exports.getIsGround = (req, res, next) => {
 exports.getIsFlying = (req, res, next) => {
 	mountModel.find({
 		isFlying: true
-	})
+	},null, {sort: {name: 1}})
 	.then(items => {
 		res.status(200).send(items);
 	})
@@ -37,7 +37,7 @@ exports.getIsFlying = (req, res, next) => {
 exports.getIsAquatic = (req, res, next) => {
 	mountModel.find({
 		isquatic: true
-	})
+	},null, {sort: {name: 1}})
 	.then(items => {
 		res.status(200).send(items);
 	})
@@ -49,7 +49,7 @@ exports.getIsAquatic = (req, res, next) => {
 exports.getIsJumping = (req, res, next) => {
 	mountModel.find({
 		isJumping: true
-	})
+	},null, {sort: {name: 1}})
 	.then(items => {
 		res.status(200).send(items);
 	})
