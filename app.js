@@ -28,7 +28,7 @@ app.use('/edit', editRoute);
 app.use('/find', findRoute);
 
 app.get('/', (req, res, next) => {
-	mountModel.find().sort([['name', 'desencing']]).then(response => {
+	mountModel.find({},null, {sort: {name: 1}}).then(response => {
 		res.status(200).send(response);
 	})
 });
