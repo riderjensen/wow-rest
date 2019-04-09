@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const mount = new Schema({
+const mounts = new Schema({
     name: String,
     spellId: Number,
     creatureId: Number,
@@ -14,4 +14,4 @@ const mount = new Schema({
     isJumping: Boolean
 });
 
-module.exports = mongoose.model('mount', mount);
+module.exports = mongoose.model('mounts', mounts);

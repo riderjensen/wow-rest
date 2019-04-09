@@ -24,7 +24,7 @@ app.get('/', (req, res, next) => {
 });
 
 
-mongoose.connect('mongodb+srv://test-user:12345678Ah@nodecourse-zfafv.mongodb.net/store?retryWrites=true', {
+mongoose.connect('mongodb+srv://rider:12345678Ah@nodecourse-zfafv.mongodb.net/wow?retryWrites=true', {
 		useNewUrlParser: true
 	})
 	.then(result => {
