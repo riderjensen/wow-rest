@@ -3,10 +3,10 @@ const router = express.Router();
 
 const editRouter = require('../controllers/edit.controller');
 
-router.put('/update/:id', editRouter.editOne);
+router.put('/:id', editRouter.editOne);
 
-router.delete('/delete/:id', editRouter.deleteOne);
+router.delete('/:id', editRouter.deleteOne);
 
-router.post('/create', editRouter.createOne);
+router.post('/', editRouter.createOne);
 
 module.exports = router;

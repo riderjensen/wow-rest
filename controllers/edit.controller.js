@@ -43,17 +43,25 @@ exports.deleteOne = (req, res, next) => {
 }
 
 exports.createOne = (req, res, next) => {
+	const body = req.body;
 
-	// get the information to create one
 
 	const myNewItem = new mountModel({
-
-		// info here
+		name: body.name,
+		spellId: body.spellId,
+		creatureId: body.creatureId,
+		itemId: body.itemId,
+		qualityId: body.qualityId,
+		icon: body.icon,
+		isGround: body.isGround,
+		isFlying: body.isFlying,
+		isAquatic: body.isAquatic,
+		isJumping: body.isJumping 
 	});
 	myNewItem.save().then(response => {
 		if (!response) {
 			return res.status(500).send({
-				message: 'Error in deleting'
+				message: 'Error in creating'
 			});
 		}
 		res.status(201).send(response);
